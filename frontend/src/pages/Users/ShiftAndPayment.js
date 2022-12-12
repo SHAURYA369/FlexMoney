@@ -26,7 +26,7 @@ export default function UserForm() {
                    
                     
                     console.log(token)
-                    const response = await axios.post('http://localhost:8000/GetPlan',{},
+                    const response = await axios.post('https://flexmoney-backend-zceq.onrender.com/GetPlan',{},
                         {
                             
                             headers: {
@@ -82,7 +82,7 @@ export default function UserForm() {
         if (validate()) {
             console.log(values);
             try {
-                await axios.post('http://localhost:8000/ChangeShift', values,{
+                await axios.post('https://flexmoney-backend-zceq.onrender.com/ChangeShift', values,{
                             
                 headers: {
                     "Accept":"application/json",

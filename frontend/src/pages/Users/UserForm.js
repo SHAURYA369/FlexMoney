@@ -62,7 +62,7 @@ export default function UserForm() {
         if (validate()) {
             console.log(values);
             try {
-                const response = await axios.post("http://localhost:8000/CreateUser", values);
+                const response = await axios.post("https://flexmoney-backend-zceq.onrender.com/CreateUser", values);
                 console.log(response.data);
                 sessionStorage["token"]=response.data.token;
                 navigate('/Dashboard');
