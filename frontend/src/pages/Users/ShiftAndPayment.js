@@ -23,9 +23,7 @@ export default function UserForm() {
             const token=sessionStorage["token"];
             const fetchData = async () => {
                 try {
-                   
-                    
-                    console.log(token)
+
                     const response = await axios.post('https://flexmoney-backend-zceq.onrender.com/GetPlan',{},
                         {
                             
@@ -37,7 +35,7 @@ export default function UserForm() {
                             }
                         }
                     );
-                    console.log(response.data);
+
                     if (response.data!="0") {
                         setisPlan(1);
                         setShift(Userservice.getShiftCollection()[response.data].title);
@@ -80,7 +78,7 @@ export default function UserForm() {
         const token=sessionStorage["token"];
         e.preventDefault()
         if (validate()) {
-            console.log(values);
+
             try {
                 await axios.post('https://flexmoney-backend-zceq.onrender.com/ChangeShift', values,{
                             
@@ -91,8 +89,8 @@ export default function UserForm() {
                     
                 }
             });
-                console.log(Userservice.getShiftCollection()[values.ShiftId].title);
-                setShift(Userservice.getShiftCollection()[values.ShiftId].title);
+
+                setShift(Userservice.getShiftCollection()[values.ShiftId-1].title);
                 setisPlan(1);
             }
             catch (err) {

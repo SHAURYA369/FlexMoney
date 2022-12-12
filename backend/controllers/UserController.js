@@ -73,13 +73,12 @@ exports.ChangeShift= async (req, res) => {
         ({
             _id:req.user.id
         });
-        console.log(user);
+
         if(user)
         {
            
             if(user.shift=='0')
             {
-                console.log(req.body.ShiftId)
                  user.shift=req.body.ShiftId;
                  await user.save();
                 res.status(200).send("Shift changed");
@@ -102,7 +101,6 @@ exports.ChangeShift= async (req, res) => {
 }
 exports.GetPlan= async (req, res) => {
     try {
-        console.log(req.user);
         const user=await userModel.find
         ({
             _id:req.user.id
@@ -120,13 +118,11 @@ exports.GetPlan= async (req, res) => {
 }
   
 exports.authenticateToken =async(req, res, next) =>{
-    console.log(req.headers)
+
 
     const authHeader = req.headers['authorization']
-    console.log(authHeader)
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null) return res.sendStatus(401)
-    console.log(token);
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) return res.sendStatus(403)
       req.user = user

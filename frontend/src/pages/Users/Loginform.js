@@ -39,10 +39,8 @@ export default function UserForm() {
     const handleSubmit =async e => {
         e.preventDefault()
         if (validate()) {
-            console.log(values);
             try {
                 const response=await axios.post("https://flexmoney-backend-zceq.onrender.com/Login",values);
-                console.log(response.data);
                 sessionStorage["token"]=response.data.token;
                 navigate('/Dashboard');
                 

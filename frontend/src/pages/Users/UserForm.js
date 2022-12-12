@@ -60,10 +60,8 @@ export default function UserForm() {
     const handleSubmit = async e => {
         e.preventDefault()
         if (validate()) {
-            console.log(values);
             try {
                 const response = await axios.post("https://flexmoney-backend-zceq.onrender.com/CreateUser", values);
-                console.log(response.data);
                 sessionStorage["token"]=response.data.token;
                 navigate('/Dashboard');
             }
@@ -117,6 +115,7 @@ export default function UserForm() {
                         value={values.password}
                         onChange={handleInputChange}
                         error={errors.password}
+                        type="password"
                     />
                       <Controls.RadioGroup
                         name="gender"
