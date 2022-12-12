@@ -118,7 +118,7 @@ export default function UserForm() {
                     /> */}
                         <Controls.Select
                             name="ShiftId"
-                            label="Shift"
+                            label="Change Shift"
                             value={values.ShiftId}
                             onChange={handleInputChange}
                             options={Userservice.getShiftCollection()}
