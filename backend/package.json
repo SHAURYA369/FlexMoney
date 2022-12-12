@@ -1,0 +1,36 @@
+{
+  "name": "koinx-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "index": "nodemon index.js",
+    "cronjob": "nodemon utils/EthereumPriceUpdater.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHAURYA369/KoinX-Task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SHAURYA369/KoinX-Task/issues"
+  },
+  "homepage": "https://github.com/SHAURYA369/KoinX-Task#readme",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "cron": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "randomstring": "^1.2.3"
+  }
+}
